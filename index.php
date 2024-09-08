@@ -291,7 +291,7 @@ if (isset($_GET['forceresult']) && $_GET['forceresult'] == 'true' && (!empty($_S
     function tryJoinMeeting() {
         // Make an AJAX request to meeting_status.txt to check if the meeting is available. If not, make AJAX request to make_call and show the loading spinner and check meeting_status.txt every second
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'meeting_status.txt'+getRandomNumber(), true);
+        xhr.open('GET', 'meeting_status.txt?num='+getRandomNumber(), true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // If the meeting is available, redirect to the meeting link
@@ -320,7 +320,7 @@ if (isset($_GET['forceresult']) && $_GET['forceresult'] == 'true' && (!empty($_S
                             // Check the meeting status every second
                             let x = setInterval(function () {
                                 const xhr3 = new XMLHttpRequest();
-                                xhr3.open('GET', 'meeting_status.txt'+getRandomNumber(), true);
+                                xhr3.open('GET', 'meeting_status.txt?num='+getRandomNumber(), true);
                                 xhr3.onreadystatechange = function () {
                                     if (xhr3.readyState === 4 && xhr3.status === 200) {
                                         // If the meeting is available, redirect to the meeting link
