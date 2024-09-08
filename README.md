@@ -39,3 +39,10 @@ define("MY_PHONE_NUMBER", ""); // TA’s phone number
 define("CORRECT_USERNAME", ""); // Admin username
 define("CORRECT_PASSWORD", ""); // Admin password
 define("BART_BASE_URL", ""); // (Optional) BART notification URL
+```
+
+2. create file timeslot.json, meeting_status.txt, and queue.json in the root directory of the project.
+3. Run the following command to install the necessary dependencies:
+```bash
+composer install
+```

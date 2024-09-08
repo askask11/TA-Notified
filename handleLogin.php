@@ -14,13 +14,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         // Credentials are correct
         $_SESSION['user'] = $username; // Store user in session
         header('Location: '.$_POST["next"]??"edit.php"); // Redirect to a welcome page or dashboard
-        exit();
     } else {
         // Credentials are incorrect
         $error = 'Invalid username or password.';
         header('Location: login.php?error=' . urlencode($error)); // Redirect back to login with error
-        exit();
     }
+    exit();
 } else {
     // No POST data
     header('Location: index.php');

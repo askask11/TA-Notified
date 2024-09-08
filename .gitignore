@@ -1,6 +1,6 @@
 config
-meeting_status.txt
 timeslot.json
+meeting_status.txt
 nah
 vendor
 # Some extra IDE stuff

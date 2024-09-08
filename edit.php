@@ -197,7 +197,7 @@ if (empty($_SESSION['user'])) {
                     icon: 'success',
                     title: 'Time slot saved successfully',
                     showConfirmButton: false,
-                    timer: 1500,
+                    timer: 800,
                     timerProgressBar: true,
                     didOpen: () => {
                         Swal.showLoading()
@@ -240,7 +240,7 @@ if (empty($_SESSION['user'])) {
                         icon: 'success',
                         title: 'Time slot deleted successfully',
                         showConfirmButton: false,
-                        timer: 1500,
+                        timer: 900,
                         timerProgressBar: true,
                         didOpen: () => {
                             Swal.showLoading()
