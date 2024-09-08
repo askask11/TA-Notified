@@ -1,38 +1,41 @@
-## Johnson's Open Lab Hours Management System
 
-An application that will notify the TA via call if the office hour time has started and TA is not here. Offers an admin portal for TA to manage hours and students to quickly join zoom rooms.
-Students visit page https://itpwebdev.jianqinggao.com,
-Greeting page:
+## TA Notified
+### App Overview
 
+This app enhances the management of office hours by notifying the TA when the session has started but the TA is not present. It calls the TA's phone number(U.S. phone only) and sends notifications via the BARK app. It also provides an admin portal for the TA to manage their office hours, and offers students a quick way to join Zoom rooms.
 
-1. It’s open lab hours time and LA is in the zoom meeting 
-    1. Students will be redirected to zoom room
-2. It’s open lab hours time but LA is NOT in the meeting:
-   1. On the student's side, the system shows a countdown of estimated wait time and queue position*. The system also places an automatic call from a US toll-free number to TA’s cell phone to notify TA to join the zoom.
-3. The student joined a time period where it has been rescheduled. 
-   1. Upon joining, students will be notified that the office hour slot has been rescheduled.
-4. Students visited this page outside scheduled time.
-   1. The system will tell students that it’s closed now and show all available times.
+When students visit [this page](https://itpwebdev.jianqinggao.com), the system responds based on the current office hour status:
 
+1. **Office hours are in session and the TA is available**
+    - Students are automatically redirected to the Zoom meeting.
 
-*queue system to be implemented
+2. **Office hours are in session but the TA is not present**
+    - Students see a countdown displaying the estimated wait time and their queue position (queue system to be implemented).
+    - The system automatically places a call from a US toll-free number to notify the TA to join the Zoom session.
 
-## Deployment Guide
-Deployment guide \
-In config/secret.inc, please fill out credentials:
-1. Register for Twilio ID from twilio.com
-2. Write TA’s phone number in MY_PHONE_NUMBER
-3. username/password for admin login
-4. BART notification URL(optional)
+3. **The office hour slot has been rescheduled**
+    - Students are notified that the office hours have been rescheduled when they visit the page.
+
+4. **Students visit outside scheduled office hours**
+    - The system informs students that office hours are closed and displays the next available time slots.
+
+---
+
+### Deployment Guide
+
+To deploy the app, complete the following steps:
+
+1. Open `config/secret.inc` and fill in the necessary credentials:
+    - Register for a Twilio account and provide your Twilio ID and token.
+    - Add the TA's phone number to `MY_PHONE_NUMBER`.
+    - Set the username and password for admin access.
+    - Optionally, provide a BART notification URL.
 
 ```php
-define("TWILIO_ACCOUNT_SID", "");
-define("TWILIO_AUTH_TOKEN", "");
-define("TWILIO_PHONE_NUMBER", "");
-define("MY_PHONE_NUMBER", "");
-define("CORRECT_USERNAME", "");
-define("CORRECT_PASSWORD", "");
-define("BART_BASE_URL", "");
-```
-
-
+define("TWILIO_ACCOUNT_SID", ""); // Your Twilio Account SID
+define("TWILIO_AUTH_TOKEN", ""); // Your Twilio Auth Token
+define("TWILIO_PHONE_NUMBER", ""); // Your Twilio phone number
+define("MY_PHONE_NUMBER", ""); // TA’s phone number
+define("CORRECT_USERNAME", ""); // Admin username
+define("CORRECT_PASSWORD", ""); // Admin password
+define("BART_BASE_URL", ""); // (Optional) BART notification URL
