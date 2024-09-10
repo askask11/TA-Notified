@@ -6,7 +6,7 @@ This app enhances the management of office hours by notifying the TA when the se
 
 When students visit [this page](https://itpwebdev.jianqinggao.com), the system responds based on the current office hour status:
 
-**Greeting Page** \
+**Greeting Page** 
 
 <img width="790" alt="image" src="https://github.com/user-attachments/assets/94361de6-2d86-4a6c-ae7d-85d33534ed05" style="width:50%;">
 
